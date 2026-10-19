@@ -11,7 +11,7 @@ WORKDIR /workspace
 
 # Copy build.gradle + settings.gradle trước, tải dependency để tận dụng cache layer
 COPY build.gradle, settings.gradle ./
-RUN 
+RUN ______
 
 # Copy mã nguồn rồi đóng gói file JAR (bỏ qua test)
 COPY ______ ./src
@@ -21,7 +21,7 @@ RUN gradle bootJar -x test
 FROM eclipse-temurin:21-jre-alpine AS runtime
 
 # Phiên bản ứng dụng truyền vào lúc build (docker compose: build-arg APP_VERSION)
-ARG ______=dev
+ARG profile=dev
 ENV APP_VERSION=______ \
     JAVA_TOOL_OPTIONS="-XX:MaxRAMPercentage=75"
 
